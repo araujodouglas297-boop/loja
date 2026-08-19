@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Camisas | CarvaImportes
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="./style.css"
+    >
+
+</head>
+
+<body>
+
+
+<header class="header">
+
+    <a
+        href="./index.html"
+        class="logo"
+    >
+        CARVA<span>IMPORTES</span>
+    </a>
+
+
+    <nav class="menu">
+
+        <a href="./index.html">
+            Início
+        </a>
+
+        <a href="./produtos.html">
+            Camisas
+        </a>
+
+        <button
+            type="button"
+            class="favoritos-header"
+            id="abrirFavoritos"
+        >
+            ❤️
+
+            <span id="contadorFavoritos">
+                0
+            </span>
+
+        </button>
+
+
+        <a
+            href="./carrinho.html"
+            class="cart-link"
+        >
+
+            🛒 Carrinho
+
+            <span id="contadorCarrinho">
+                0
+            </span>
+
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- CABEÇALHO CATÁLOGO -->
+
+<section class="catalogo-hero">
+
+    <span>
+        CARVAIMPORTES
+    </span>
+
+    <h1>
+        Camisas
+    </h1>
+
+    <p>
+        Escolha seu clube ou seleção.
+    </p>
+
+</section>
+
+
+<main id="catalogo">
+
+
+    <!-- PESQUISA -->
+
+    <section class="catalogo-controles">
+
+
+        <div class="barra-pesquisa">
+
+            <span class="icone-pesquisa">
+                🔎
+            </span>
+
+
+            <input
+                type="search"
+                id="pesquisaProduto"
+                placeholder="Pesquisar Real Madrid, São Paulo, Brasil..."
+                autocomplete="off"
+            >
+
+
+            <button
+                type="button"
+                id="limparPesquisa"
+                class="limpar-pesquisa"
+            >
+                ✕
+            </button>
+
+        </div>
+
+
+        <!-- FILTROS -->
+
+        <div class="filtros-catalogo">
+
+
+            <button
+                type="button"
+                class="filtro-btn ativo"
+                data-filtro="todos"
+            >
+                Todas
+            </button>
+
+
+            <button
+                type="button"
+                class="filtro-btn"
+                data-filtro="europeus"
+            >
+                Europeus
+            </button>
+
+
+            <button
+                type="button"
+                class="filtro-btn"
+                data-filtro="brasileiros"
+            >
+                Brasileiros
+            </button>
+
+
+            <button
+                type="button"
+                class="filtro-btn"
+                data-filtro="selecoes"
+            >
+                Seleções
+            </button>
+
+
+            <button
+                type="button"
+                class="filtro-btn"
+                data-filtro="favoritos"
+            >
+                ❤️ Favoritos
+            </button>
+
+
+        </div>
+
+
+        <div class="resultado-pesquisa">
+
+            <span id="quantidadeResultados">
+            </span>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- EUROPEUS -->
+
+    <section
+        class="categoria"
+        id="europeus"
+    >
+
+        <div class="titulo-categoria">
+
+            <span>
+                INTERNACIONAIS
+            </span>
+
+            <h2>
+                Times Europeus
+            </h2>
+
+        </div>
+
+
+        <div
+            class="produtos-grid"
+            id="produtosEuropeus"
+        >
+        </div>
+
+    </section>
+
+
+    <!-- BRASILEIROS -->
+
+    <section
+        class="categoria"
+        id="brasileiros"
+    >
+
+        <div class="titulo-categoria">
+
+            <span>
+                FUTEBOL BRASILEIRO
+            </span>
+
+            <h2>
+                Times Brasileiros
+            </h2>
+
+        </div>
+
+
+        <div
+            class="produtos-grid"
+            id="produtosBrasileiros"
+        >
+        </div>
+
+    </section>
+
+
+    <!-- SELEÇÕES -->
+
+    <section
+        class="categoria"
+        id="selecoes"
+    >
+
+        <div class="titulo-categoria">
+
+            <span>
+                FUTEBOL MUNDIAL
+            </span>
+
+            <h2>
+                Seleções
+            </h2>
+
+        </div>
+
+
+        <div
+            class="produtos-grid"
+            id="produtosSelecoes"
+        >
+        </div>
+
+    </section>
+
+
+    <!-- SEM RESULTADOS -->
+
+    <section
+        class="sem-resultados"
+        id="semResultados"
+    >
+
+        <div class="sem-resultados-icone">
+            🔎
+        </div>
+
+        <h3>
+            Nenhuma camisa encontrada
+        </h3>
+
+        <p>
+            Tente pesquisar outro time.
+        </p>
+
+        <button
+            type="button"
+            id="btnMostrarTodos"
+            class="btn-primary"
+        >
+            MOSTRAR TODAS
+        </button>
+
+    </section>
+
+
+</main>
+
+
+<footer>
+
+    <div class="footer-logo">
+        CARVA<span>IMPORTES</span>
+    </div>
+
+    <p>
+        Camisas de futebol importadas.
+    </p>
+
+    <small>
+        © 2026 CarvaImportes
+    </small>
+
+</footer>
+
+
+<script src="./js/script.js"></script>
+
+</body>
+
+</html>

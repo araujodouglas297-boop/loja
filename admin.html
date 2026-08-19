@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Painel Admin | CarvaImportes</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="admin-body">
+
+<header class="header">
+
+    <a href="./index.html" class="logo">
+        CARVA<span>IMPORTES</span>
+    </a>
+
+    <nav class="menu">
+        <a href="./index.html">Loja</a>
+        <a href="./produtos.html">Camisas</a>
+    </nav>
+
+</header>
+
+
+<main class="admin-page">
+
+    <div class="admin-titulo">
+
+        <div>
+            <span>CARVAIMPORTES</span>
+            <h1>Painel Administrativo</h1>
+
+            <p>
+                Cadastre e gerencie as camisas da loja.
+            </p>
+        </div>
+
+        <div class="admin-total">
+            <span>Produtos</span>
+            <strong id="totalProdutosAdmin">0</strong>
+        </div>
+
+    </div>
+
+
+    <section class="admin-layout">
+
+
+        <!-- FORMULÁRIO -->
+
+        <form
+            class="admin-form"
+            id="produtoAdminForm"
+        >
+
+            <input
+                type="hidden"
+                id="produtoEditando"
+            >
+
+
+            <h2>
+                Cadastrar camisa
+            </h2>
+
+
+            <div class="admin-campo">
+
+                <label>
+                    Nome do time
+                </label>
+
+                <input
+                    type="text"
+                    id="adminNome"
+                    placeholder="Ex: Bayern de Munique"
+                    required
+                >
+
+            </div>
+
+
+            <div class="admin-campo">
+
+                <label>
+                    Categoria
+                </label>
+
+                <select
+                    id="adminCategoria"
+                    required
+                >
+
+                    <option value="europeus">
+                        Europeus
+                    </option>
+
+                    <option value="brasileiros">
+                        Brasileiros
+                    </option>
+
+                    <option value="selecoes">
+                        Seleções
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="admin-campo">
+
+                <label>
+                    Imagem
+                </label>
+
+                <input
+                    type="text"
+                    id="adminImagem"
+                    placeholder="./img/bayern.png"
+                    required
+                >
+
+                <small>
+                    Coloque a imagem dentro da pasta img.
+                </small>
+
+            </div>
+
+
+            <div class="admin-duplo">
+
+                <div class="admin-campo">
+
+                    <label>
+                        Preço Torcedor
+                    </label>
+
+                    <input
+                        type="number"
+                        id="adminPrecoTorcedor"
+                        value="160"
+                        min="0"
+                        step="0.01"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="admin-campo">
+
+                    <label>
+                        Preço Jogador
+                    </label>
+
+                    <input
+                        type="number"
+                        id="adminPrecoJogador"
+                        value="180"
+                        min="0"
+                        step="0.01"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-campo">
+
+                <label>
+                    Estoque
+                </label>
+
+                <input
+                    type="number"
+                    id="adminEstoque"
+                    value="10"
+                    min="0"
+                    required
+                >
+
+            </div>
+
+
+            <div class="admin-checks">
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        id="adminLancamento"
+                    >
+
+                    Lançamento
+
+                </label>
+
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        id="adminMaisVendido"
+                    >
+
+                    Mais vendido
+
+                </label>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="admin-salvar"
+            >
+                SALVAR PRODUTO
+            </button>
+
+
+            <button
+                type="button"
+                class="admin-cancelar"
+                id="cancelarEdicao"
+            >
+                CANCELAR EDIÇÃO
+            </button>
+
+        </form>
+
+
+        <!-- PRODUTOS -->
+
+        <section class="admin-produtos">
+
+            <div class="admin-produtos-topo">
+
+                <div>
+                    <span>CATÁLOGO</span>
+                    <h2>Produtos cadastrados</h2>
+                </div>
+
+                <input
+                    type="search"
+                    id="adminPesquisa"
+                    placeholder="Pesquisar..."
+                >
+
+            </div>
+
+
+            <div
+                id="listaProdutosAdmin"
+                class="admin-lista"
+            >
+            </div>
+
+        </section>
+
+    </section>
+
+</main>
+
+
+<script src="./js/script.js"></script>
+<script src="./js/admin.js"></script>
+
+</body>
+</html>

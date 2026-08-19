@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Checkout | CarvaImportes
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="./style.css"
+    >
+
+</head>
+
+<body>
+
+
+<header class="header">
+
+    <a
+        href="./index.html"
+        class="logo"
+    >
+        CARVA<span>IMPORTES</span>
+    </a>
+
+
+    <nav class="menu">
+
+        <a href="./produtos.html">
+            Camisas
+        </a>
+
+        <a href="./carrinho.html">
+            ← Voltar ao carrinho
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main class="checkout-page">
+
+
+    <div class="page-title">
+
+        <span>
+            FINALIZAR PEDIDO
+        </span>
+
+        <h1>
+            Checkout
+        </h1>
+
+    </div>
+
+
+    <div class="checkout-layout">
+
+
+        <!-- FORMULÁRIO -->
+
+        <form
+            class="checkout-form"
+            id="checkoutForm"
+        >
+
+
+            <!-- DADOS -->
+
+            <h2>
+                Dados pessoais
+            </h2>
+
+
+            <div class="form-grid">
+
+
+                <div class="campo full">
+
+                    <label for="clienteNome">
+                        Nome completo
+                    </label>
+
+                    <input
+                        id="clienteNome"
+                        type="text"
+                        placeholder="Digite seu nome"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="clienteTelefone">
+                        WhatsApp
+                    </label>
+
+                    <input
+                        id="clienteTelefone"
+                        type="tel"
+                        placeholder="(11) 99999-9999"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="clienteEmail">
+                        E-mail
+                    </label>
+
+                    <input
+                        id="clienteEmail"
+                        type="email"
+                        placeholder="seuemail@gmail.com"
+                    >
+
+                </div>
+
+
+            </div>
+
+
+            <!-- ENTREGA -->
+
+            <h2>
+                Endereço de entrega
+            </h2>
+
+
+            <div class="checkout-aviso-cep">
+
+                📦 Digite o CEP e o endereço será
+                preenchido automaticamente.
+
+            </div>
+
+
+            <div class="form-grid">
+
+
+                <div class="campo">
+
+                    <label for="clienteCep">
+                        CEP
+                    </label>
+
+                    <input
+                        id="clienteCep"
+                        type="text"
+                        maxlength="9"
+                        inputmode="numeric"
+                        placeholder="00000-000"
+                        required
+                    >
+
+                    <small id="statusCep"></small>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="clienteNumero">
+                        Número
+                    </label>
+
+                    <input
+                        id="clienteNumero"
+                        type="text"
+                        placeholder="123"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo full">
+
+                    <label for="clienteEndereco">
+                        Rua / Avenida
+                    </label>
+
+                    <input
+                        id="clienteEndereco"
+                        type="text"
+                        placeholder="Rua..."
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="clienteBairro">
+                        Bairro
+                    </label>
+
+                    <input
+                        id="clienteBairro"
+                        type="text"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="clienteCidade">
+                        Cidade
+                    </label>
+
+                    <input
+                        id="clienteCidade"
+                        type="text"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="clienteEstado">
+                        Estado
+                    </label>
+
+                    <input
+                        id="clienteEstado"
+                        type="text"
+                        maxlength="2"
+                        placeholder="SP"
+                        readonly
+                    >
+
+                </div>
+
+
+                <div class="campo full">
+
+                    <label for="clienteComplemento">
+                        Complemento
+                    </label>
+
+                    <input
+                        id="clienteComplemento"
+                        type="text"
+                        placeholder="Apartamento, bloco, referência..."
+                    >
+
+                </div>
+
+
+            </div>
+
+
+            <!-- PAGAMENTO -->
+
+            <h2>
+                Pagamento
+            </h2>
+
+
+            <label class="pagamento-option">
+
+                <input
+                    type="radio"
+                    name="pagamento"
+                    value="PIX"
+                    checked
+                >
+
+                <div>
+
+                    <strong>
+                        PIX
+                    </strong>
+
+                    <span>
+                        Pagamento rápido e fácil
+                    </span>
+
+                </div>
+
+            </label>
+
+
+            <div class="pix-box">
+
+                <span>
+                    Chave PIX
+                </span>
+
+                <strong id="pixKey">
+                    SEU-PIX-AQUI
+                </strong>
+
+
+                <button
+                    type="button"
+                    onclick="copiarPix()"
+                >
+                    COPIAR PIX
+                </button>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="btn-whatsapp"
+            >
+                FINALIZAR PELO WHATSAPP
+            </button>
+
+
+        </form>
+
+
+        <!-- RESUMO -->
+
+        <aside class="checkout-resumo">
+
+
+            <h2>
+                Seu pedido
+            </h2>
+
+
+            <div id="checkoutProdutos">
+            </div>
+
+
+            <div class="checkout-valores">
+
+
+                <div>
+
+                    <span>
+                        Produtos
+                    </span>
+
+                    <strong id="checkoutSubtotal">
+                        R$ 0,00
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Frete
+                    </span>
+
+                    <strong id="checkoutFrete">
+                        Digite seu CEP
+                    </strong>
+
+                </div>
+
+
+                <div
+                    id="checkoutPrazoContainer"
+                    class="checkout-prazo"
+                >
+
+                    <span>
+                        Prazo
+                    </span>
+
+                    <strong id="checkoutPrazo">
+                        -
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+            <hr>
+
+
+            <div class="checkout-total">
+
+                <span>
+                    Total
+                </span>
+
+                <strong id="checkoutTotal">
+                    R$ 0,00
+                </strong>
+
+            </div>
+
+
+            <small class="checkout-observacao">
+
+                O frete é calculado de acordo
+                com o estado de entrega.
+
+            </small>
+
+
+        </aside>
+
+
+    </div>
+
+</main>
+
+
+<script src="./js/script.js"></script>
+
+</body>
+
+</html>

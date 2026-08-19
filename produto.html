@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Produto | CarvaImportes
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="./style.css"
+    >
+
+</head>
+
+<body>
+
+
+<header class="header">
+
+    <a
+        href="./index.html"
+        class="logo"
+    >
+        CARVA<span>IMPORTES</span>
+    </a>
+
+
+    <nav class="menu">
+
+        <a href="./index.html">
+            Início
+        </a>
+
+        <a href="./produtos.html">
+            Camisas
+        </a>
+
+        <a
+            href="./carrinho.html"
+            class="cart-link"
+        >
+
+            🛒 Carrinho
+
+            <span id="contadorCarrinho">
+                0
+            </span>
+
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main class="produto-page">
+
+    <div class="produto-detalhes">
+
+
+        <!-- IMAGEM -->
+
+        <div class="produto-imagem-container">
+
+            <img
+                id="produtoImagem"
+                src=""
+                alt="Camisa"
+            >
+
+        </div>
+
+
+        <!-- INFORMAÇÕES -->
+
+        <div class="produto-info">
+
+
+            <span class="produto-tag">
+                CAMISA IMPORTADA
+            </span>
+
+
+            <h1 id="produtoNome">
+                Camisa
+            </h1>
+
+
+            <div class="estrelas">
+
+                ★★★★★
+
+                <span>
+                    Produto Premium
+                </span>
+
+            </div>
+
+
+            <div class="produto-preco">
+
+                <span>
+                    A partir de
+                </span>
+
+                <strong>
+                    R$ 160,00
+                </strong>
+
+            </div>
+
+
+            <div
+                id="estoqueProduto"
+                class="estoque-produto-detalhe"
+            >
+            </div>
+
+
+            <hr>
+
+
+            <!-- MODELO -->
+
+            <div class="opcao-produto">
+
+                <label>
+                    Escolha o modelo
+                </label>
+
+
+                <div class="modelo-options">
+
+
+                    <label class="modelo-card">
+
+                        <input
+                            type="radio"
+                            name="modelo"
+                            value="Torcedor"
+                            data-preco="160"
+                            checked
+                        >
+
+                        <span>
+
+                            <strong>
+                                Torcedor
+                            </strong>
+
+                            R$ 160,00
+
+                        </span>
+
+                    </label>
+
+
+                    <label class="modelo-card">
+
+                        <input
+                            type="radio"
+                            name="modelo"
+                            value="Jogador"
+                            data-preco="180"
+                        >
+
+                        <span>
+
+                            <strong>
+                                Jogador
+                            </strong>
+
+                            R$ 180,00
+
+                        </span>
+
+                    </label>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- TAMANHO -->
+
+            <div class="opcao-produto">
+
+                <label>
+                    Escolha o tamanho
+                </label>
+
+
+                <div class="tamanhos">
+
+                    <button
+                        type="button"
+                        class="tamanho-btn"
+                        data-tamanho="P"
+                    >
+                        P
+                    </button>
+
+                    <button
+                        type="button"
+                        class="tamanho-btn"
+                        data-tamanho="M"
+                    >
+                        M
+                    </button>
+
+                    <button
+                        type="button"
+                        class="tamanho-btn"
+                        data-tamanho="G"
+                    >
+                        G
+                    </button>
+
+                    <button
+                        type="button"
+                        class="tamanho-btn"
+                        data-tamanho="GG"
+                    >
+                        GG
+                    </button>
+
+                    <button
+                        type="button"
+                        class="tamanho-btn"
+                        data-tamanho="XG"
+                    >
+                        XG
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PERSONALIZAÇÃO -->
+
+            <div class="personalizacao">
+
+                <h3>
+                    Personalização
+                </h3>
+
+                <p>
+                    Opcional
+                </p>
+
+
+                <div class="personalizacao-grid">
+
+
+                    <div>
+
+                        <label for="nomeCamisa">
+                            Nome
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nomeCamisa"
+                            maxlength="15"
+                            placeholder="Ex: DOUGLAS"
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="numeroCamisa">
+                            Número
+                        </label>
+
+                        <input
+                            type="number"
+                            id="numeroCamisa"
+                            min="0"
+                            max="99"
+                            placeholder="10"
+                        >
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- FRETE -->
+
+            <div class="frete-produto">
+
+                <div class="frete-produto-titulo">
+
+                    <div>
+
+                        <span>
+                            📦 ENTREGA
+                        </span>
+
+                        <h3>
+                            Calcular frete
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <p>
+                    Digite seu CEP para consultar
+                    o valor e prazo estimado.
+                </p>
+
+
+                <div class="frete-form">
+
+                    <input
+                        type="text"
+                        id="cepProduto"
+                        maxlength="9"
+                        inputmode="numeric"
+                        placeholder="00000-000"
+                    >
+
+
+                    <button
+                        type="button"
+                        id="calcularFreteProduto"
+                    >
+                        CALCULAR
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="resultadoFreteProduto"
+                    class="resultado-frete"
+                >
+                </div>
+
+            </div>
+
+
+            <!-- QUANTIDADE -->
+
+            <div class="quantidade-container">
+
+                <label>
+                    Quantidade
+                </label>
+
+
+                <div class="quantidade">
+
+                    <button
+                        type="button"
+                        onclick="alterarQuantidade(-1)"
+                    >
+                        −
+                    </button>
+
+
+                    <span id="quantidade">
+                        1
+                    </span>
+
+
+                    <button
+                        type="button"
+                        onclick="alterarQuantidade(1)"
+                    >
+                        +
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- TOTAL -->
+
+            <div class="total-produto">
+
+                <span>
+                    Total dos produtos
+                </span>
+
+                <strong id="produtoTotal">
+                    R$ 160,00
+                </strong>
+
+            </div>
+
+
+            <!-- COMPRAR -->
+
+            <button
+                type="button"
+                id="btnAdicionarCarrinho"
+                class="btn-comprar"
+            >
+
+                🛒 ADICIONAR AO CARRINHO
+
+            </button>
+
+
+            <a
+                href="./carrinho.html"
+                class="btn-ir-carrinho"
+            >
+                VER CARRINHO
+            </a>
+
+
+            <div class="produto-beneficios">
+
+                <p>
+                    ✓ Produto importado
+                </p>
+
+                <p>
+                    ✓ Torcedor ou Jogador
+                </p>
+
+                <p>
+                    ✓ Personalização disponível
+                </p>
+
+                <p>
+                    ✓ Envio para todo Brasil
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<div
+    id="toast"
+    class="toast"
+>
+    ✓ Produto adicionado ao carrinho!
+</div>
+
+
+<script src="./js/script.js"></script>
+
+</body>
+
+</html>
